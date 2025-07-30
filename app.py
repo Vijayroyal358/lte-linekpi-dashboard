@@ -829,40 +829,6 @@ def main():
             - Avg_VoLTE_Users
             - QCI1 Drop Rate
             """)
-            
-        with col2:
-            # Create sample data
-            sample_data = {
-                "Timestamp per 15 minutes": ["2025-07-24 17:45", "2025-07-24 18:00"],
-                "lte_cell_name": ["ITOBSB4L", "TURDCA2L"],
-                "Max_User": [113, 68],
-                "AVG_Users": [109, 47],
-                "Number of Drop": [105, 18],
-                "QCI1 abnormal release": [0, 1],
-                "Availability": [100, 100],
-                "RRC_Attempt": ["4,360", "1,247"],
-                "RRC_Setup_SR": ["99.908", "99.92"],
-                "ERAB_Attempt": ["7,882", "2,290"],
-                "ERAB_Setup_SR": ["99.924", "100"],
-                "DL_Trafic_Volume MB": [3286.523, 938.716],
-                "UL_Trafic_Volume MB": [412.167, 75.706],
-                "Session_Drop_Rate": ["1.385", "0.572"],
-                "QCI1 Attempt": [133, 34],
-                "QCI1 SR": [100, 100],
-                "Avg_VoLTE_Users": [5.133, 3.6],
-                "QCI1 Drop Rate": [0, "1.563"]
-            }
-            sample_df = pd.DataFrame(sample_data)
-            st.dataframe(sample_df)
-            
-            # Download sample template
-            csv = sample_df.to_csv(index=False).encode('utf-8')
-            st.download_button(
-                label="Download Sample Template",
-                data=csv,
-                file_name="lte_kpi_template.csv",
-                mime="text/csv"
-            )
     
     # Handle refresh button
     if refresh_btn:
